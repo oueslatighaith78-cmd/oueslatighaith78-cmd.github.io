@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghaith Oueslati — Développeur Full-Stack</title>
+<meta name="description" content="Portfolio de Ghaith Oueslati, étudiant en Business Computing à l'ESSECT : applications web, systèmes de gestion et ERP.">
+<style>
+:root{--indigo:#4F46E5;--blue:#2563EB;--cyan:#06B6D4;--grad:linear-gradient(110deg,#818cf8,#38bdf8 55%,#22d3ee);--bg:#080B14;--surface:#111827;--text:#F1F5F9;--muted:#9aa8bd;--line:rgba(148,163,184,.2);--glass:rgba(17,24,39,.6);--nav:rgba(8,11,20,.8)}
+[data-theme=light]{--bg:#F8FAFC;--surface:#fff;--text:#0F172A;--muted:#475569;--line:rgba(15,23,42,.14);--glass:#fff;--nav:rgba(248,250,252,.85);--grad:linear-gradient(110deg,#4F46E5,#2563EB 55%,#0891b2)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:"Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 85% 8%,rgba(79,70,229,.22),transparent),radial-gradient(500px 360px at 5% 40%,rgba(6,182,212,.1),transparent)}
+a{color:inherit}:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+section{padding:72px 6vw;max-width:1120px;margin:auto}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem);letter-spacing:-.02em;line-height:1.2;margin-bottom:24px}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--muted)}
+header{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px 14px;padding:10px 5vw;max-width:1200px;margin:auto}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none}
+.links{display:flex;gap:2px;margin-inline-start:auto}
+.links a{padding:6px 12px;border-radius:99px;text-decoration:none;font-size:.9rem;color:var(--muted)}
+.links a.on,.links a:hover{color:var(--text);background:var(--line)}
+.tools{display:flex;gap:6px}
+.tools button{font:inherit;font-size:.85rem;cursor:pointer;color:var(--text);background:var(--glass);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+.btn{display:inline-block;font:inherit;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;color:var(--text);background:var(--glass);border:1px solid var(--line);border-radius:99px;padding:11px 22px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}.btn.p{background:linear-gradient(110deg,var(--indigo),var(--blue));border:0;color:#fff}
+.btn[aria-disabled]{opacity:.5;pointer-events:none}
+.hero{min-height:74vh;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0 0 8px}
+.role{font-size:1.2rem;font-weight:600;margin-bottom:10px}
+.hero p.d{color:var(--muted);font-size:1.12rem;max-width:52ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 16px}
+.social{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.social a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:.9rem;font-weight:600;background:var(--glass);border:1px solid var(--line);border-radius:99px;padding:8px 14px;transition:border-color .2s}
+.social a:hover{border-color:var(--cyan)}.social svg{width:18px;height:18px;fill:currentColor;flex:none}.social svg.s{fill:none;stroke:currentColor;stroke-width:2}
+.avail{font-size:.9rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;flex:none}
+.photo{width:100%;max-width:340px;aspect-ratio:4/5;margin:auto;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 0 80px rgba(79,70,229,.35);background:var(--grad);display:grid;place-items:center;font-size:4rem;font-weight:800;color:#fff}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--glass);border-radius:99px;padding:3px 12px;font-size:.8rem}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:20px;padding:26px;transition:border-color .2s}
+.card:hover{border-color:var(--cyan)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:34px;margin-bottom:22px;background:linear-gradient(135deg,rgba(79,70,229,.16),rgba(6,182,212,.07)),var(--glass)}
+.feat h3{font-size:1.6rem;line-height:1.2;margin:6px 0 14px}
+.feat dl{display:grid;gap:12px}.feat dt{font-weight:700;font-size:.85rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em}.feat dd{margin:0;color:var(--muted)}
+.tag{font-size:.82rem;color:var(--cyan);font-weight:600}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.proj h3{margin:4px 0 8px}.proj p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.proj video,.feat video,.proj img,.feat img{width:100%;border-radius:12px;margin-bottom:14px;border:1px solid var(--line);background:#000}
+.links2{display:flex;gap:14px;margin-top:12px;font-size:.88rem}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}.edu b{display:block;font-size:.8rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}.edu .muted{display:block}.ed+.ed{margin-top:14px}.edu .lb{margin-top:18px}
+footer{border-top:1px solid var(--line);padding:26px 6vw;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;color:var(--muted);font-size:.88rem}
+footer select{font:inherit;font-size:.85rem;cursor:pointer;color:var(--text);background:var(--glass);border:1px solid var(--line);border-radius:99px;padding:4px 10px}
+main{counter-reset:sec}
+h2{counter-increment:sec}
+h2::before{content:"0" counter(sec);display:block;font-size:.8rem;font-weight:700;letter-spacing:.16em;color:var(--cyan);margin-bottom:6px}
+#progress{position:fixed;top:0;inset-inline:0;height:3px;z-index:60;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+body::after{content:"";position:fixed;width:46vw;height:46vw;max-width:520px;max-height:520px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.28),transparent 65%);top:-8vw;inset-inline-end:-12vw;z-index:-1;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-8vw,14vh) scale(1.15)}}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@keyframes glow{50%{opacity:.35}}
+.pw{position:relative;width:100%;max-width:340px;margin:auto}
+.pw .photo{max-width:none;overflow:visible;isolation:isolate;border-radius:28px}
+.photo::before{content:"";position:absolute;inset:-4px;border-radius:32px;background:conic-gradient(#6366f1,#22d3ee,#a78bfa,#6366f1);filter:blur(16px);opacity:.65;z-index:-1;animation:glow 5s ease-in-out infinite}
+.photo img{border-radius:28px}
+.btn.p{box-shadow:0 8px 30px -8px rgba(79,70,229,.75)}
+.card{transition:border-color .2s,transform .3s,box-shadow .3s}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s,border-color .2s,box-shadow .3s}
+.rv.in{opacity:1;transform:none;transition:opacity .7s,transform .3s,border-color .2s,box-shadow .3s}
+.rv.in.card:hover{transform:translateY(-5px);box-shadow:0 20px 50px -22px rgba(79,70,229,.6)}
+ul.ft{list-style:none;padding:0;display:grid;gap:7px;margin:0 0 16px;font-size:.92rem;color:var(--muted)}
+ul.ft li{display:flex;gap:10px}ul.ft li::before{content:"";width:7px;height:7px;margin-top:.55em;border-radius:50%;background:var(--grad);flex:none}
+.shot img,.shot video{transition:transform .6s}.proj:hover .shot img{transform:scale(1.06)}
+.ph{background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(148,163,184,.07) 10px 20px)}
+.tl{position:relative;display:grid;gap:18px;padding-inline-start:30px}
+.tl::before{content:"";position:absolute;inset-block:8px;inset-inline-start:8px;width:2px;background:linear-gradient(var(--cyan),transparent)}
+.tl .xp::before{content:"";position:absolute;inset-inline-start:-30px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan)}
+.xp{position:relative}
+.chip{transition:background .2s,border-color .2s}.chip:hover{border-color:var(--cyan)}
+.shot{aspect-ratio:16/10;border-radius:12px;overflow:hidden;margin-bottom:14px;border:1px solid var(--line);background:var(--surface)}
+.shot a{display:block;height:100%}
+.proj .shot img,.proj .shot video,.feat .shot img,.feat .shot video{width:100%;height:100%;object-fit:cover;margin:0;border:0;border-radius:0;display:block}
+.shot.ct{background:#fff}.proj .shot.ct img{object-fit:contain;padding:18px}
+.ph{display:grid;place-content:center;justify-items:center;gap:6px;border-style:dashed;color:var(--muted);font-size:.85rem}
+.ph svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6}
+.xp h3{font-size:1.1rem;margin:4px 0 2px}.xp p{color:var(--muted);font-size:.95rem;margin-top:10px}
+.sk .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(79,70,229,.32),rgba(6,182,212,.22));margin-bottom:16px}
+.sk .ic svg{width:23px;height:23px;fill:none;stroke:var(--cyan);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sk h3{font-size:1.15rem;margin-bottom:6px}.sk p{color:var(--muted);font-size:.92rem;margin-bottom:16px}.sk .chip{font-size:.85rem;padding:5px 14px}
+.contact{max-width:720px}.contact h2{text-align:center}
+.form{display:grid;gap:14px}.form .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:grid;gap:6px;font-size:.88rem;font-weight:600}
+.form input,.form textarea{font:inherit;font-weight:400;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 14px;resize:vertical;width:100%}
+.form button{justify-self:start}
+@media(max-width:820px){
+ .form .two{grid-template-columns:1fr}
+ .links{order:3;width:100%;justify-content:center;margin:0}.tools{margin-inline-start:auto}
+ .hero,.feat,.edu{grid-template-columns:1fr}.pw{max-width:210px;order:-1}.hero{min-height:0;padding-top:40px}
+ section{padding:56px 6vw}.feat{padding:22px}.cta .btn{flex:1 1 100%;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header><nav aria-label="Navigation">
+ <a class="logo g" href="#home">Ghaith Oueslati</a>
+ <div class="links"><a href="#projects" data-i18n="n_proj"></a><a href="#exp" data-i18n="n_exp"></a><a href="#skills" data-i18n="n_skills"></a><a href="#edu" data-i18n="n_edu"></a><a href="#contact" data-i18n="n_contact"></a></div>
+ <div class="tools"><button id="theme" aria-label="Thème / Theme">◐</button></div>
+</nav></header>
+<main>
+<section id="home" class="hero">
+ <div>
+  <h1 class="g">Ghaith Oueslati</h1>
+  <div class="role" data-i18n="h_role"></div>
+  <p class="d" data-i18n="h_desc"></p>
+  <div class="social" id="social"></div>
+  <div class="cta"><a class="btn p" href="#projects" data-i18n="b_proj"></a><a class="btn" id="cv" href="#" data-i18n="b_cv"></a></div>
+  <div class="avail" data-i18n="h_avail"></div>
+ </div>
+ <div class="pw"><div class="photo" id="photo" role="img" aria-label="Ghaith Oueslati">GO</div></div>
+</section>
+
+<section id="projects">
+ <h2 data-i18n="p_title"></h2>
+ <article class="card feat">
+  <div><div class="tag" data-i18n="f_tag"></div><h3 data-i18n="f_title"></h3>
+   <div class="chips"><span class="chip">Laravel</span><span class="chip">PHP</span><span class="chip">Blade</span><span class="chip">Tailwind CSS</span><span class="chip">Alpine.js</span><span class="chip">MySQL</span><span class="chip">DomPDF</span></div>
+   <div id="fmedia" style="margin-top:18px"></div></div>
+  <dl><div><dt data-i18n="f_c"></dt><dd data-i18n="f_cd"></dd></div><div><dt data-i18n="f_d"></dt><dd><ul class="ft" id="fl"></ul></dd></div><div><dt data-i18n="f_r"></dt><dd data-i18n="f_rd"></dd></div></dl>
+ </article>
+ <div class="grid" id="pgrid"></div>
+</section>
+
+<section id="exp">
+ <h2 data-i18n="x_title"></h2>
+ <div class="tl">
+  <article class="card xp"><div class="tag" data-i18n="x1_d"></div><h3 data-i18n="x1_t"></h3><div class="muted" data-i18n="x1_c"></div><p data-i18n="x1_p"></p><div class="chips" style="margin-top:12px"><span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">DomPDF</span></div></article>
+  <article class="card xp"><div class="tag" data-i18n="x2_d"></div><h3 data-i18n="x2_t"></h3><div class="muted" data-i18n="x2_c"></div></article>
+ </div>
+</section>
+
+<section id="skills">
+ <h2 data-i18n="s_title"></h2>
+ <div class="grid" id="rows"></div>
+</section>
+
+<section id="edu">
+ <h2 data-i18n="e_title"></h2>
+ <article class="card edu">
+  <div><b data-i18n="e_deg_l"></b><div class="ed"><strong data-i18n="e_deg"></strong><span class="muted" data-i18n="e_sch"></span></div><div class="ed"><strong data-i18n="e_bac"></strong><span class="muted" id="bac"></span></div></div>
+  <div><b data-i18n="e_cert"></b><div class="chips"><span class="chip">Hedera Certified Foundation · 2026</span><span class="chip">DLTC — Dar Blockchain · 2026</span></div><b class="lb" data-i18n="l_title"></b><div class="chips" id="langs"></div></div>
+ </article>
+</section>
+<section id="contact" class="contact">
+ <h2 data-i18n="t_title"></h2>
+ <form id="cf" class="card form" novalidate>
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="two"><label><span data-i18n="c_name"></span><input name="name" required autocomplete="name"></label><label><span data-i18n="c_mail"></span><input type="email" name="email" required autocomplete="email"></label></div>
+  <label><span data-i18n="c_msg"></span><textarea name="message" rows="5" required></textarea></label>
+  <button class="btn p" type="submit" data-i18n="c_send"></button>
+  <p id="cs" class="muted" role="status"></p>
+ </form>
+</section>
+</main>
+<footer><select id="lang" aria-label="Langue / Language"><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option></select><span>© <span id="yr"></span> Ghaith Oueslati · Tunis</span></footer>
+
+<script>
+/* ===== CONFIG : liens et fichiers (placés à côté de ce HTML) ===== */
+/* facebook / whatsapp : laissez "" pour masquer le bouton. whatsapp = numéro international sans + ni espaces, ex. "21612345678" */
+/* bac : ex. "Section Économie et Gestion · Mention Bien · 2023" (laissez "" pour n'afficher que « Baccalauréat ») */
+const CONFIG={bac:{fr:"Économie et Gestion · Mention Bien · 2024 · Lycée 2 Mars 1934, Siliana",en:"Economics & Management · Honours (Mention Bien) · 2024 · Lycée 2 Mars 1934, Siliana",ar:"اقتصاد وتصرف · ملاحظة حسن · 2024 · معهد 2 مارس 1934، سليانة"},email:"oueslatighaith78@gmail.com",linkedin:"https://www.linkedin.com/in/ghaith-oueslati-281bb7335",github:"https://github.com/oueslatighaith78-cmd",facebook:"",whatsapp:"21697697596",whatsappLabel:"+216 97 697 596",
+ cv:"Ghaith_Oueslati.pdf",photo:"photo.jpg",
+ erpMedia:["media/erp.webp"]};  /* photos ET vidéos du projet phare : ex. ["media/erp-1.png","media/erp-demo.mp4"] */
+
+/* ===== TRADUCTIONS ===== */
+const T={
+fr:{n_proj:"Projets",n_edu:"Formation",h_role:"Développeur Full-Stack · ERP & applications de gestion",
+h_desc:"Étudiant en 3ᵉ année de Business Computing à l'ESSECT, Tunis.",
+b_proj:"Voir mes projets",b_cv:"Télécharger mon CV",h_avail:"Disponible pour un stage PFE ou des missions freelance.",
+p_title:"Projets",f_tag:"Projet phare · Stage chez Broyat Palm · 2026",f_title:"ERP de gestion en production",
+f_c:"Contexte",f_cd:"Ventes, achats, stocks et règlements gérés sur Excel.",
+f_d:"Réalisation",f_dd:"ERP complet : anti-double facturation, stock jamais négatif, double unité (tonnes/sacs) tracée, PDF aux normes tunisiennes.",
+f_r:"Résultat",f_rd:"Validé par le responsable, utilisé au quotidien.",
+e_title:"Formation",e_deg_l:"Diplôme",e_deg:"Licence Business Computing",e_sch:"ESSECT, Tunis · 3ᵉ année",e_cert:"Certifications",
+tag_ac:"Projet académique",tag_fi:"Cas fictif (formation)"},
+en:{n_proj:"Projects",n_edu:"Education",h_role:"Full-Stack Developer · ERP & management apps",
+h_desc:"Third-year Business Computing student at ESSECT, Tunis.",
+b_proj:"See my projects",b_cv:"Download my CV",h_avail:"Available for a PFE internship or freelance work.",
+p_title:"Projects",f_tag:"Flagship project · Internship at Broyat Palm · 2026",f_title:"Management ERP in production",
+f_c:"Context",f_cd:"Sales, purchasing, stock and payments managed in Excel.",
+f_d:"Delivered",f_dd:"Complete ERP: no double invoicing, no negative stock, dual-unit stock (tonnes/bags) with traceability, PDFs to Tunisian standards.",
+f_r:"Result",f_rd:"Validated by the manager, used daily.",
+e_title:"Education",e_deg_l:"Degree",e_deg:"Bachelor in Business Computing",e_sch:"ESSECT, Tunis · 3rd year",e_cert:"Certifications",
+tag_ac:"Academic project",tag_fi:"Fictional case (training)"},
+ar:{n_proj:"المشاريع",n_edu:"التكوين",h_role:"مطوّر شامل (Full-Stack) · ERP وتطبيقات التصرف",
+h_desc:"طالب في السنة الثالثة معلوماتية تصرفية بـ ESSECT، تونس.",
+b_proj:"شاهد مشاريعي",b_cv:"تحميل سيرتي الذاتية",h_avail:"متاح لتربص PFE أو لمهام مستقلة.",
+p_title:"المشاريع",f_tag:"المشروع الأبرز · تربص بـ Broyat Palm · 2026",f_title:"نظام ERP للتصرف قيد الإنتاج",
+f_c:"السياق",f_cd:"المبيعات والمشتريات والمخزون والمدفوعات تُدار في Excel.",
+f_d:"الإنجاز",f_dd:"ERP متكامل: منع الفوترة المزدوجة والمخزون السالب، مخزون بوحدتين (طن/أكياس) مع التتبع، ووثائق PDF بالمعايير التونسية.",
+f_r:"النتيجة",f_rd:"صادق عليه المسؤول ويُستعمل يوميا.",
+e_title:"التكوين",e_deg_l:"الشهادة",e_deg:"إجازة في المعلوماتية التصرفية",e_sch:"ESSECT، تونس · السنة الثالثة",e_cert:"الشهادات",
+tag_ac:"مشروع أكاديمي",tag_fi:"حالة افتراضية (تكوين)"}};
+
+Object.assign(T.fr,{d_dev:"Applications web et desktop, du back-end à l'interface.",d_data:"Bases de données, requêtes, tableaux de bord et flux ETL.",d_erp:"Mise en place d'Odoo, modélisation et travail en équipe agile.",e_bac:"Baccalauréat",n_exp:"Expérience",n_skills:"Compétences",n_contact:"Contact",x_title:"Expérience",x1_d:"2026",x1_t:"Stagiaire développeur ERP",x1_c:"Broyat Palm",x1_p:"ERP complet développé, validé par le responsable et utilisé au quotidien.",x2_d:"2025–2026",x2_t:"Membre, Département Événementiel",x2_c:"Club INFOLAB, ESSECT",s_title:"Compétences",r_dev:"Développement",r_data:"Données & BI",r_erp:"ERP & méthodes",t_title:"Un stage, un projet, une idée ?",c_name:"Nom",c_mail:"E-mail",c_msg:"Message",c_send:"Envoyer",c_wait:"Envoi en cours…",c_ok:"Message envoyé, merci !",c_err:"Envoi direct impossible : votre messagerie va s'ouvrir.",ph:"Image du projet"});
+Object.assign(T.en,{d_dev:"Web and desktop applications, from back-end to interface.",d_data:"Databases, queries, dashboards and ETL flows.",d_erp:"Odoo implementation, modelling and agile teamwork.",e_bac:"Baccalaureate",n_exp:"Experience",n_skills:"Skills",n_contact:"Contact",x_title:"Experience",x1_d:"2026",x1_t:"ERP Developer Intern",x1_c:"Broyat Palm",x1_p:"Built a complete ERP, validated by the manager and used daily.",x2_d:"2025–2026",x2_t:"Member, Events Department",x2_c:"INFOLAB club, ESSECT",s_title:"Skills",r_dev:"Development",r_data:"Data & BI",r_erp:"ERP & methods",t_title:"An internship, a project, an idea?",c_name:"Name",c_mail:"E-mail",c_msg:"Message",c_send:"Send",c_wait:"Sending…",c_ok:"Message sent, thank you!",c_err:"Direct sending failed: your mail app will open.",ph:"Project image"});
+Object.assign(T.ar,{d_dev:"تطبيقات ويب ومكتبية، من الخلفية إلى الواجهة.",d_data:"قواعد بيانات واستعلامات ولوحات قيادة وتدفقات ETL.",d_erp:"إرساء Odoo والنمذجة والعمل الجماعي بمنهجية رشيقة.",e_bac:"الباكالوريا",n_exp:"الخبرة",n_skills:"المهارات",n_contact:"تواصل",x_title:"الخبرة",x1_d:"2026",x1_t:"متربص مطوّر ERP",x1_c:"Broyat Palm",x1_p:"تطوير ERP متكامل صادق عليه المسؤول ويُستعمل يوميا.",x2_d:"2025–2026",x2_t:"عضو، قسم التظاهرات",x2_c:"نادي INFOLAB، ESSECT",s_title:"المهارات",r_dev:"التطوير",r_data:"البيانات وBI",r_erp:"ERP والمنهجيات",t_title:"تربص أو مشروع أو فكرة؟",c_name:"الاسم",c_mail:"البريد الإلكتروني",c_msg:"الرسالة",c_send:"إرسال",c_wait:"جارٍ الإرسال…",c_ok:"تم الإرسال، شكرا!",c_err:"تعذر الإرسال المباشر، سيفتح بريدك.",ph:"صورة المشروع"});
+
+Object.assign(T.fr,{h_desc:"Étudiant en 3ᵉ année de Licence Business Computing à l'ESSECT, passionné par le développement logiciel : applications web (Laravel, PHP), applications desktop (Java/JavaFX) et systèmes de gestion (ERP, Odoo). Première expérience en entreprise et plusieurs projets intégrant bases de données, sécurité et IA générative.",
+r_lang:"Langages",r_web:"Web",r_db:"Bases de données",d_lang:"Back-end, desktop et scripts.",d_web:"Interfaces et applications web modernes.",d_db:"Modélisation et requêtes relationnelles.",d_data:"Analyse, entrepôts de données et reporting.",d_erp:"Mise en place d'Odoo, modélisation et méthodes agiles.",r_tools:"Outils",d_tools:"Versionnement, éditeurs et génération de PDF.",
+e_sch:"ESSECT, Tunis · 2024 – 2027 (3ᵉ année)",x1_d:"Juillet – Août 2026",x1_t:"Stagiaire Développeur Full-Stack",l_title:"Langues"});
+Object.assign(T.en,{h_desc:"Third-year Business Computing student at ESSECT, passionate about software development: web apps (Laravel, PHP), desktop apps (Java/JavaFX) and management systems (ERP, Odoo). First company experience and several projects involving databases, security and generative AI.",
+r_lang:"Languages",r_web:"Web",r_db:"Databases",d_lang:"Back-end, desktop and scripting.",d_web:"Modern web interfaces and applications.",d_db:"Relational modelling and queries.",d_data:"Analysis, data warehousing and reporting.",d_erp:"Odoo setup, modelling and agile methods.",r_tools:"Tools",d_tools:"Versioning, editors and PDF generation.",
+e_sch:"ESSECT, Tunis · 2024 – 2027 (3rd year)",x1_d:"July – August 2026",x1_t:"Full-Stack Developer Intern",l_title:"Languages"});
+Object.assign(T.ar,{h_desc:"طالب في السنة الثالثة إجازة معلوماتية تصرفية بـ ESSECT، شغوف بتطوير البرمجيات: تطبيقات ويب (Laravel، PHP) وتطبيقات مكتبية (Java/JavaFX) وأنظمة تصرف (ERP، Odoo). أول تجربة في مؤسسة وعدة مشاريع تشمل قواعد البيانات والأمان والذكاء الاصطناعي التوليدي.",
+r_lang:"اللغات البرمجية",r_web:"الويب",r_db:"قواعد البيانات",d_lang:"الخلفية والتطبيقات المكتبية والسكريبت.",d_web:"واجهات وتطبيقات ويب حديثة.",d_db:"نمذجة واستعلامات علائقية.",d_data:"التحليل ومستودعات البيانات وإعداد التقارير.",d_erp:"إرساء Odoo والنمذجة والمنهجيات الرشيقة.",r_tools:"الأدوات",d_tools:"إدارة الإصدارات والمحررات وتوليد PDF.",
+e_sch:"ESSECT، تونس · 2024 – 2027 (السنة الثالثة)",x1_d:"جويلية – أوت 2026",x1_t:"متربص مطوّر Full-Stack",l_title:"اللغات"});
+
+/* ===== PROJETS : gh / demo / media (photos ou vidéos .mp4) ===== */
+const FL={fr:["Anti-double facturation","Anti-stock négatif","Stock en double unité (tonnes/sacs) avec traçabilité","Documents PDF aux normes tunisiennes"],
+en:["No double invoicing","No negative stock","Dual-unit stock (tonnes/bags) with traceability","PDF documents to Tunisian standards"],
+ar:["منع الفوترة المزدوجة","منع المخزون السالب","مخزون بوحدتين (طن/أكياس) مع التتبع","وثائق PDF بالمعايير التونسية"]};
+const P=[
+{n:"ApexDevice",tag:"tag_ac",st:["Laravel","Sanctum","MySQL","PHPUnit"],gh:"",demo:"",media:["media/apexdevice.webp"],
+ d:{fr:"Une marketplace e-commerce complète, de la vitrine à la gestion vendeur.",en:"A complete e-commerce marketplace, from storefront to seller management.",ar:"سوق إلكترونية متكاملة، من الواجهة إلى إدارة البائعين."},
+ b:{fr:["3 rôles : admin, vendeur, client","Panier, messagerie et recommandations","API REST sécurisée (Sanctum)","Tests automatisés (PHPUnit)"],en:["3 roles: admin, seller, customer","Cart, messaging and recommendations","Secured REST API (Sanctum)","Automated tests (PHPUnit)"],ar:["3 أدوار: مدير وبائع وحريف","سلة ومراسلة وتوصيات","واجهة REST مؤمّنة (Sanctum)","اختبارات آلية (PHPUnit)"]}},
+{n:"Coach IA",tag:"tag_ac",st:["Java","JavaFX","MySQL","IA générative"],gh:"",demo:"",media:["media/coach-ia.webp"],
+ d:{fr:"Un assistant de productivité desktop qui organise votre travail grâce à l'IA.",en:"A desktop productivity assistant that organises your work with AI.",ar:"مساعد إنتاجية مكتبي ينظّم عملك بالذكاء الاصطناعي."},
+ b:{fr:["Décomposition des tâches par IA générative","Planification de la journée","Suivi du temps","Statistiques de productivité"],en:["Task breakdown with generative AI","Daily planning","Time tracking","Productivity statistics"],ar:["تقسيم المهام بالذكاء الاصطناعي التوليدي","تخطيط اليوم","تتبع الوقت","إحصائيات الإنتاجية"]}},
+{n:"TechNova — ERP Odoo",tag:"tag_fi",st:["Odoo","Ventes","Achats","Inventaire","Comptabilité"],gh:"",demo:"",fit:1,media:["media/technova.png"],
+ d:{fr:"Le cycle de gestion complet d'une société fictive de matériel informatique, sous Odoo.",en:"The full management cycle of a fictional IT hardware company, built on Odoo.",ar:"دورة التصرف الكاملة لشركة افتراضية للعتاد المعلوماتي على Odoo."},
+ b:{fr:["Du bon de commande à la facture","Contrôle du stock","Modules Ventes, Achats, Inventaire","Comptabilité intégrée"],en:["From purchase order to invoice","Stock control","Sales, Purchase, Inventory modules","Integrated accounting"],ar:["من طلب الشراء إلى الفاتورة","مراقبة المخزون","وحدات المبيعات والمشتريات والمخزون","محاسبة مدمجة"]}}];
+const ROWS=[["r_lang","d_lang",'<path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',["PHP","Java","JavaFX","JavaScript","Python","C","C#"]],
+["r_web","d_web",'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/>',["HTML","CSS","Laravel","Blade","Tailwind CSS","Alpine.js","Bootstrap"]],
+["r_db","d_db",'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',["MySQL","SQL","PL/SQL","SQLite"]],
+["r_data","d_data",'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',["Power BI","Data Warehouse","ETL"]],
+["r_erp","d_erp",'<path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5"/>',["Odoo","UML","Scrum"]],
+["r_tools","d_tools",'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>',["Git","GitHub","VS Code","Visual Studio","DomPDF"]]];
+const LG={fr:["Arabe · maternelle","Français · B2","Anglais · B2","Italien · A1"],en:["Arabic · native","French · B2","English · B2","Italian · A1"],ar:["العربية · لغة أم","الفرنسية · B2","الإنجليزية · B2","الإيطالية · A1"]};
+const IMG='<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m21 16-5-5-9 9"/></svg>';
+const ICO={
+li:'<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>',
+gh:'<svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.292-1.552 3.299-1.23 3.299-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .321.216.694.825.576C20.565 21.795 24 17.298 24 12.297c0-6.627-5.373-12-12-12"/></svg>',
+fb:'<svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+wa:'<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>',
+ml:'<svg class="s" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'};
+
+/* ===== LOGIQUE ===== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const st={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const EXT=["webp","png","jpg","jpeg"];
+function fb(i){const b=i.dataset.b,k=+(i.dataset.k||0),c=[];["","media/"].forEach(d=>EXT.forEach(e=>c.push(d+b+"."+e)));
+ if(k<c.length){i.dataset.k=k+1;i.src=c[k]}else i.removeAttribute("onerror")}
+const imgs=(m,alt)=>m.map(u=>/\.(mp4|webm)$/i.test(u)?`<video controls preload="metadata" playsinline src="${u}"></video>`:`<a href="${u}" target="_blank" rel="noopener"><img loading="lazy" src="${u}" data-b="${u.replace(/^media\//,"").replace(/\.\w+$/,"")}" onerror="fb(this)" onload="this.parentNode.href=this.currentSrc" alt="${alt}"></a>`).join("");
+const slot=(m,alt,t,c)=>`<div class="shot${m.length?"":" ph"}${c?" ct":""}">${m.length?imgs(m,alt):IMG+`<span>${t.ph}</span>`}</div>`;
+function setTheme(t){document.documentElement.dataset.theme=t;st.set("theme",t)}
+setTheme(st.get("theme")||"dark");
+$("#theme").onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
+function setLang(l){const t=T[l],d=document.documentElement;st.set("lang",l);d.lang=l;d.dir=l==="ar"?"rtl":"ltr";$("#lang").value=l;
+ $$("[data-i18n]").forEach(e=>e.textContent=t[e.dataset.i18n]);
+ $("#pgrid").innerHTML=P.map(p=>`<article class="card proj">${slot(p.media.slice(0,1),p.n,t,p.fit)}<div class="tag">${t[p.tag]}</div><h3>${p.n}</h3><p>${p.d[l]}</p><ul class="ft">${p.b[l].map(x=>`<li>${x}</li>`).join("")}</ul><div class="chips">${p.st.map(x=>`<span class="chip">${x}</span>`).join("")}</div>${p.gh||p.demo?`<div class="links2">${p.gh?`<a href="${p.gh}" target="_blank" rel="noopener">GitHub ↗</a>`:""}${p.demo?`<a href="${p.demo}" target="_blank" rel="noopener">Demo ↗</a>`:""}</div>`:""}</article>`).join("");
+ $("#fl").innerHTML=FL[l].map(x=>`<li>${x}</li>`).join("");
+ $("#rows").innerHTML=ROWS.map(([k,d,ic,a])=>`<div class="card sk"><div class="ic"><svg viewBox="0 0 24 24">${ic}</svg></div><h3>${t[k]}</h3><p>${t[d]}</p><div class="chips">${a.map(x=>`<span class="chip">${x}</span>`).join("")}</div></div>`).join("");
+ $("#bac").textContent=(CONFIG.bac&&CONFIG.bac[l])||"";
+ $("#langs").innerHTML=LG[l].map(x=>`<span class="chip">${x}</span>`).join("");
+ $("#fmedia").innerHTML=slot(CONFIG.erpMedia.slice(0,1),"ERP",t)+imgs(CONFIG.erpMedia.slice(1),"ERP");links();reveal()}
+$("#lang").onchange=e=>setLang(e.target.value);
+function links(){const C=CONFIG,wa=C.whatsapp&&"https://wa.me/"+C.whatsapp.replace(/\D/g,"");
+ $("#social").innerHTML=[[ICO.li,"LinkedIn",C.linkedin],[ICO.gh,"GitHub",C.github],[ICO.fb,"Facebook",C.facebook],[ICO.wa,C.whatsappLabel||"WhatsApp",wa],[ICO.ml,"E-mail",C.email&&"mailto:"+C.email]]
+  .filter(x=>x[2]).map(([i,l,u])=>`<a href="${u}"${u.startsWith("http")?' target="_blank" rel="noopener"':""}>${i}${l}</a>`).join("");
+ const cv=$("#cv");if(C.cv){cv.href=C.cv;cv.setAttribute("download","");cv.removeAttribute("aria-disabled")}else{cv.removeAttribute("href");cv.setAttribute("aria-disabled","true")}
+ if(C.photo&&!$("#photo img")){$("#photo").innerHTML=`<img src="${C.photo}" alt="Ghaith Oueslati" onerror="this.remove();document.getElementById('photo').textContent='GO'">`}}
+$("#cf").onsubmit=async e=>{e.preventDefault();const f=e.target,t=T[document.documentElement.lang],o=$("#cs");
+ if(!f.reportValidity()||f.elements._honey.value)return;
+ const d=Object.fromEntries(new FormData(f));delete d._honey;const sub="Portfolio — "+d.name;o.textContent=t.c_wait;
+ try{const r=await fetch("https://formsubmit.co/ajax/"+CONFIG.email,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({...d,_subject:sub})});
+  if(!r.ok)throw 0;f.reset();o.textContent=t.c_ok}
+ catch(_){o.textContent=t.c_err;location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(d.message+"\n\n"+d.email)}`}};
+const ro=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");ro.unobserve(x.target)}}),{threshold:.1});
+function reveal(){$$("section:not(.hero) h2,section .card").forEach(e=>{if(!e.classList.contains("rv")){e.classList.add("rv");ro.observe(e)}})}
+addEventListener("scroll",()=>{const h=document.documentElement,m=h.scrollHeight-innerHeight;$("#progress").style.transform=`scaleX(${m>0?scrollY/m:0})`},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)$$(".links a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+x.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+$$("section[id]").forEach(s=>io.observe(s));
+$("#yr").textContent=new Date().getFullYear();
+setLang(st.get("lang")||"fr");
+</script>
+</body>
+</html>
